@@ -3,7 +3,7 @@
  * Created Date: 11-29-2020
  * Author: Thomas Ose
  * ---------------------------------------------------------------------------
- * Last Modified: Sunday, 29th November 2020 7:47:19 pm
+ * Last Modified: Monday, 5th July 2021 8:16:59 pm
  * Modified By: Thomas Ose (tmo@osemicro.com>)
  * ---------------------------------------------------------------------------
  * Copyright (c) 2016 - 2020 OMS(re)Models
@@ -64,9 +64,9 @@
 #define OFF HIGH
 
 int LastSensorRead = 0;
-bool LightRequire = true;
-bool LastLightRequire = true;
-bool LastLightStatus = true;
+bool LightRequire;
+bool LastLightRequire;
+bool LastLightStatus;
 unsigned long LightRequireStartTime = 0;
 
 // task scheduler variables
@@ -76,8 +76,8 @@ void CheckSensor_Callback();
 void CheckModule_CallBack();
 void CheckHeartBeat_CallBack();
 
-Task CheckSensor(2500, TASK_FOREVER, &CheckSensor_Callback);
-Task CheckModule(2000, TASK_FOREVER, &CheckModule_CallBack);
+Task CheckSensor(500, TASK_FOREVER, &CheckSensor_Callback);
+Task CheckModule(1000, TASK_FOREVER, &CheckModule_CallBack);
 Task CheckHeartBeat(1000, TASK_FOREVER, &CheckHeartBeat_CallBack);
 
 #endif

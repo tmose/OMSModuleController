@@ -3,7 +3,7 @@
  * Created Date: 11-29-2020
  * Author: Thomas Ose
  * ---------------------------------------------------------------------------
- * Last Modified: Sunday, 29th November 2020 7:46:30 pm
+ * Last Modified: Monday, 5th July 2021 8:12:40 pm
  * Modified By: Thomas Ose (tmo@osemicro.com>)
  * ---------------------------------------------------------------------------
  * Copyright (c) 2016 - 2020 OMS(re)Models
@@ -36,7 +36,7 @@ void CheckSensor_Callback()
     int value = analogRead(LIGHT_SENSOR);
     delay(10);
     Serial.println(value);
-    bool lightRequested = (value < 200) ? true : false;
+    bool lightRequested = (value < 200) ? true: false;
     if (LastSensorRead != lightRequested)
     {
         LastSensorRead = lightRequested;
@@ -72,7 +72,7 @@ void CheckModule_CallBack()
     {
         LightRequireStartTime = millis();
         digitalWrite(MOD_1, ON);
-        digitalWrite(MOD_2, ON);
+        digitalWrite(MOD_2, OFF);
         digitalWrite(MOD_3, ON);
         digitalWrite(MOD_4, ON);
         digitalWrite(MOD_5, ON);
@@ -86,7 +86,7 @@ void CheckModule_CallBack()
     {
         LightRequireStartTime = 0;
         digitalWrite(MOD_1, OFF);
-        digitalWrite(MOD_2, OFF);
+        digitalWrite(MOD_2, ON);
         digitalWrite(MOD_3, OFF);
         digitalWrite(MOD_4, OFF);
         digitalWrite(MOD_5, OFF);
@@ -154,7 +154,7 @@ void setup()
     Serial.println("Heartbeat task added");
 
     digitalWrite(MOD_1, OFF);
-    digitalWrite(MOD_2, OFF);
+    digitalWrite(MOD_2, ON);
     digitalWrite(MOD_3, OFF);
     digitalWrite(MOD_4, OFF);
     digitalWrite(MOD_5, OFF);
