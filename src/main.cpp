@@ -3,7 +3,7 @@
  * Created Date: 11-29-2020
  * Author: Thomas Ose
  * ---------------------------------------------------------------------------
- * Last Modified: Monday, 5th July 2021 8:12:40 pm
+ * Last Modified: Monday, 5th July 2021 8:42:15 pm
  * Modified By: Thomas Ose (tmo@osemicro.com>)
  * ---------------------------------------------------------------------------
  * Copyright (c) 2016 - 2020 OMS(re)Models
@@ -94,7 +94,7 @@ void CheckModule_CallBack()
         digitalWrite(LEDBANK_1, OFF);
         digitalWrite(LEDBANK_2, OFF);
         digitalWrite(LEDBANK_3, OFF);
-        digitalWrite(LEDBANK_4, OFF);
+        digitalWrite(LEDBANK_4, ON);
     }
 }
 
@@ -162,7 +162,7 @@ void setup()
     digitalWrite(LEDBANK_1, OFF);
     digitalWrite(LEDBANK_2, OFF);
     digitalWrite(LEDBANK_3, OFF);
-    digitalWrite(LEDBANK_4, OFF);
+    digitalWrite(LEDBANK_4, ON);
 }
 
 /**
